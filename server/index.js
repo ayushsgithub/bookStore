@@ -1,34 +1,16 @@
 import express from "express";
-import { PORT, mongoDBURL } from "./config.js";
+import "dotenv/config"
 import mongoose from "mongoose";
 import { Book } from "./model/bookModel.js";
 // import booksRoute from "./routes/booksRoute.js";
 // import cors from "cors";
 
+const PORT = process.env.PORT;
+const mongoDBURL=process.env.MONGO_URL
+
 const app = express();
 
-// Middleware for parsing request body
-// app.use(express.json());
-
-// // Middleware for handling CORS POLICY
-// // Option 1: Allow All Origins with Default of cors(*)
-// app.use(cors());
-// // Option 2: Allow Custom Origins
-// // app.use(
-// //   cors({
-// //     origin: 'http://localhost:3000',
-// //     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-// //     allowedHeaders: ['Content-Type'],
-// //   })
-// // );
-
-// app.get("/", (request, response) => {
-//     console.log(request);
-//     return response.status(234).send("Welcome To MERN Stack Tutorial");
-// });
-
-// app.use("/books", booksRoute);
-
+app.use(express.json());
 
 app.post("/books", async (req, res) => {
     try {
@@ -53,6 +35,32 @@ app.post("/books", async (req, res) => {
         
     }
 })
+
+app.get("/books", async (req, res) => {
+    try {
+        const books = await Book.find({})
+        res.status(200).json({
+            count: books.length,
+            data: books,
+        })
+    } catch (error) {
+        console.log(error.message)
+        res.status(500).send({ message: error.message })
+    }
+})
+
+app.get('/books/:id', async (req, res) => {
+    try {
+      const { id } = req.params;
+  
+      const book = await Book.findById(id);
+  
+      return res.status(200).json(book);
+    } catch (error) {
+      console.log(error.message);
+      res.status(500).send({ message: error.message });
+    }
+  });
 
 mongoose.connect(mongoDBURL)
     .then(() => {
