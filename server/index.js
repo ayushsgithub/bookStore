@@ -62,30 +62,48 @@ app.get('/books/:id', async (req, res) => {
     }
   });
 
-  app.put('/books/:id', async (request, response) => {
+  app.put('/books/:id', async (req, res) => {
     try {
       if (
-        !request.body.title ||
-        !request.body.author ||
-        !request.body.publishYear
+        !req.body.title ||
+        !req.body.author ||
+        !req.body.publishYear
       ) {
-        return response.status(400).send({
+        return res.status(400).send({
           message: 'Send all required fields: title, author, publishYear',
         });
       }
   
-      const { id } = request.params;
+      const { id } = req.params;
   
-      const result = await Book.findByIdAndUpdate(id, request.body);
+      const result = await Book.findByIdAndUpdate(id, req.body);
   
       if (!result) {
-        return response.status(404).json({ message: 'Book not found' });
+        return res.status(404).json({ message: 'Book not found' });
       }
   
-      return response.status(200).send({ message: 'Book updated successfully' });
+      return res.status(200).send({ message: 'Book updated successfully' });
     } catch (error) {
       console.log(error.message);
-      response.status(500).send({ message: error.message });
+      res.status(500).send({ message: error.message });
+    }
+  });
+
+
+  app.delete('/books/:id', async (req, res) => {
+    try {
+      const { id } = req.params;
+  
+      const result = await Book.findByIdAndDelete(id);
+  
+      if (!result) {
+        return res.status(404).json({ message: 'Book not found' });
+      }
+  
+      return res.status(200).send({ message: 'Book deleted successfully' });
+    } catch (error) {
+      console.log(error.message);
+      res.status(500).send({ message: error.message });
     }
   });
 
