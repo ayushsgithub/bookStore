@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        alegreya: ['Alegreya Sans SC', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }
