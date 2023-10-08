@@ -157,7 +157,3 @@ That's it! You've successfully set up and run the BookStore project on your loca
 ## Contributing
 
 We welcome contributions from the community! If you'd like to contribute to the project, please follow our [Contribution Guidelines](CONTRIBUTING.md).
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
