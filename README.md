@@ -2,6 +2,9 @@
 
 Welcome to the BookStore project, a fully functional online book store built using the MERN (MongoDB, Express.js, React.js, Node.js) stack. This project allows users to browse, add, edit, and delete book entries, providing an intuitive and efficient way to manage your book collection.
 
+![booksTable](https://github.com/ayushsgithub/bookStore/blob/main/client/public/booksTable.png?raw=true)
+
+
 ## Table of Contents
 - [Features](#features)
 - [Tech Stack](#tech-stack)
@@ -15,14 +18,29 @@ Welcome to the BookStore project, a fully functional online book store built usi
 ### Browse Books
 - Users can easily browse through the list of books, either in table format or by specific card view, providing flexibility in how they view their collection.
 
+![booksTable](https://github.com/ayushsgithub/bookStore/blob/main/client/public/booksCard.png?raw=true)
+
 ### Add New Books
 - Add new entries for books to keep your collection up to date. Fill in the details, such as title, author, genre, and more, to maintain an organized library.
+
+![booksTable](https://github.com/ayushsgithub/bookStore/blob/main/client/public/bookCreate.png?raw=true)
 
 ### Edit Book Details
 - Users have the ability to edit the details of existing books, ensuring that the information in the collection is accurate and up-to-date.
 
+![booksTable](https://github.com/ayushsgithub/bookStore/blob/main/client/public/bookEdit.png?raw=true)
+
 ### Delete Books
 - Remove books from the list when they are no longer in your collection or for any other reason, ensuring that your library stays well-maintained.
+
+![booksTable](https://github.com/ayushsgithub/bookStore/blob/main/client/public/bookDelete.png?raw=true)
+
+### Show Single Book
+- To see single book information.
+
+![booksTable](https://github.com/ayushsgithub/bookStore/blob/main/client/public/bookShow.png?raw=true)
+
+![booksTable](https://github.com/ayushsgithub/bookStore/blob/main/client/public/booksCardSingle.png?raw=true)
 
 ## Tech Stack
 
