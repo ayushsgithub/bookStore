@@ -71,7 +71,8 @@ bookStore/
 
 
 
-## Running the application locally
+
+## Running the application locally on your machine
 
 To run the BookStore project on your local machine, which consists of two main folders (client and server) with a MongoDB backend and an example `.env` file in the server folder, follow these steps:
 
